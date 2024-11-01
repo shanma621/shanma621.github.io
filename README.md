@@ -35,3 +35,19 @@ GitHub Link: A link to the project’s repository for further exploration.
 
 📫 Contact Me
 Feel free to reach out via LinkedIn or email me at shanma621@gmail.com I’m open to discussing data analytics projects, opportunities, and collaborations.
+
+
+📖 How to Run Locally
+If you'd like to clone and run the site locally:
+
+Clone the Repository:
+
+
+bash
+Copy code
+git clone https://github.com/shanma621/shanma621.github.io.git
+Open index.html in Your Browser.
+
+
+
+Thank you for visiting my portfolio! I look forward to connecting and sharing my work.
