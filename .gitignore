@@ -1,0 +1,22 @@
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore PyCharm-specific files
+.idea/
+*.iml
+
+# Ignore virtual environment directories (if created within your project directory)
+venv/
+.env/
+
+# Ignore log files and temporary files
+*.log
+*.tmp
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+
+# Ignore Node modules (if using any npm packages or JavaScript libraries in the future)
+node_modules/
