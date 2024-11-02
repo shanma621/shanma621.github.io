@@ -4,46 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shanna Siebert | Data Analyst Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Shanna Siebert</h1>
-        <p>Data Analytics Major | Python | SQL | Visualization</p>
-        <nav>
-            <a href="#about">About</a><br>
-            <a href="#projects">Projects</a><br>
-            <a href="#contact">Contact</a><br>
-        </nav>
-    </header>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Shanna Siebert</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Hello! I’m a passionate and driven data analytics student at Western Governors University, nearing the finish line of my Bachelor of Science in Data Analytics. I bring a unique blend of personal dedication, adaptability, and teamwork, honed during an extended period of homeschooling and caring for a child on the autism spectrum. While I may have a gap in traditional work history, this time strengthened my skills in time management, organization, and developing solutions under pressure.
-
-Through managing my son's educational journey, I led and participated in team-based educational meetings where we crafted creative, tailored solutions to address his specific learning needs. This experience taught me to adapt quickly, stay resilient, and employ patience- traits essential for collaborating in dynamic and fast-paced roles in data and analytics. As a WGU student, I’ve demonstrated the ability to learn independently, stay disciplined, and master concepts quickly— skills that WGU’s competency-based model demands, where success is measured solely through final projects or exams.
-
-I am excited to bring my skills in data, problem-solving, and collaborative work to a professional environment. My commitment to excellence, curiosity, and team-oriented mindset drive me to contribute meaningfully and grow continuously. I’m ready to embark on this next chapter and am thrilled about the opportunity to make a difference through data!
-
-</p>
-    </section>
-
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Project Title</h3>
-            <p>Description of the project, tools used, and the problem it solves.</p>
-            <a href="https://github.com/your-username/project-repo" target="_blank">View on GitHub</a>
+    <!-- Hero Section -->
+    <section class="hero text-center">
+        <div class="container">
+            <h1>Hello, I'm Shanna</h1>
+            <p class="lead">Aspiring Data Analyst with a passion for insights and data-driven solutions</p>
         </div>
     </section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Feel free to reach out to me on <a href="https://www.linkedin.com/in/shanma621/" target="_blank">LinkedIn</a> or <a href="shanma621@gmail.com">via email</a>.</p>
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container text-center">
+            <h2>About Me</h2>
+            <p class="mt-3">Hello! I’m a passionate and driven data analytics student at Western Governors University,
+                nearing the finish line of my Bachelor of Science in Data Analytics. I bring a unique blend of personal
+                dedication, adaptability, and teamwork, honed during an extended period of homeschooling and caring for
+                a child on the autism spectrum. While I may have a gap in traditional work history, this time
+                strengthened my skills in time management, organization, and developing solutions under pressure.
+<br><br>
+                Through managing my son's educational journey, I led and participated in team-based educational meetings
+                where we crafted creative, tailored solutions to address his specific learning needs. This experience
+                taught me to adapt quickly, stay resilient, and employ patience- traits essential for collaborating in
+                dynamic and fast-paced roles in data and analytics. As a WGU student, I’ve demonstrated the ability to
+                learn independently, stay disciplined, and master concepts quickly— skills that WGU’s competency-based
+                model demands, where success is measured solely through a single final project or exam.
+<br><br>
+                I am excited to bring my skills in data, problem-solving, and collaborative work to a professional
+                environment. My commitment to excellence, curiosity, and team-oriented mindset drive me to contribute
+                meaningfully and grow continuously. I’m ready to embark on this next chapter and am thrilled about the
+                opportunity to make a difference through data!
+            </p>
+        </div>
     </section>
 
-    <footer>
+    <!-- Projects Section -->
+    <section id="projects" class="py-5">
+        <div class="container">
+            <h2 class="text-center">Projects</h2>
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Project 1</h5>
+                            <p class="card-text">A description of your project, highlighting key tools and skills.</p>
+                            <a href="https://github.com/your-username/project-repo" class="btn btn-primary" target="_blank">View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more project cards as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container text-center">
+            <h2>Contact Me</h2>
+            <p>Connect with me on <a href="https://linkedin.com/in/your-linkedin" target="_blank">LinkedIn</a> or <a href="mailto:your-email@example.com">send an email</a>.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
         <p>&copy; 2024 Shanna Siebert</p>
     </footer>
+
+    <!-- Bootstrap JavaScript Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
