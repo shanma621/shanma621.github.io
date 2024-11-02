@@ -1,50 +1,108 @@
+/* Fixed Navigation Bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Hero Banner for Main Landing Page */
 .hero {
-    background-image: url('analyst_image.png'); /* Replace with the path to your image */
+    background-image: url('analyst_image.png'); /* Replace with actual image path */
     background-size: cover;
     background-position: center;
     width: 100%;
-    height: 675px; /* Default height for large screens */
-    max-height: 675px;
-}
-
-@media (max-width: 768px) { /* Adjusts for tablets and smaller screens */
-    .hero {
-        height: 400px; /* Reduce height on smaller screens */
-    }
-}
-
-@media (max-width: 480px) { /* Further adjustments for very small screens */
-    .hero {
-        height: 250px; /* Make it shorter for mobile screens */
-    }
-}
-
-.hero h1 {
-    font-size: 3rem;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
-.hero .lead {
-    font-size: 1.5rem;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+/* Hero Banner for About Me Page */
+.subpage-hero {
+    background-image: url('smaller_graph_banner.png'); /* Replace with actual image path */
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 50vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
+/* Content Sections for Landing Page */
+.content-section {
+    width: 75%; /* Background color spans 75% of the width */
+    padding: 60px 15px;
+    background-color: #f0f0f0;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    margin: 30px auto; /* Centers section and adds spacing */
+}
 
-/* About, Projects, and Contact Sections */
+/* First section offset for Landing Page */
+.first-section {
+    margin-top: 100vh;
+}
+
+/* Full-width Content Section for About Me Page */
+.full-width-section {
+    width: 100%; /* Full width background for About Me */
+    padding: 60px 15px;
+    background-color: #b0c9d4; /* Custom color for About Me page */
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    margin-top: 50vh; /* Offset for the smaller banner */
+}
+
+/* Container for content within each section */
+.content-container {
+    max-width: 75%; /* Content limited to 75% width */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Specific background colors for sections */
 #about {
-    background-color: #F0F4FF; /* Light slate gray or any other soft color */
+    background-color: #b0c9d4; /* Light blue for About section */
+    text-color: #344c5e
 }
 
 #projects {
-    background-color: #F7F7F7; /* Light neutral gray */
+    background-color: #344c5e; /* Darker blue for Projects section */
+    text-color: #b0c9d4
 }
 
 #contact {
-    background-color: #F0F4FF; /* Matches with About section for cohesion */
+    background-color: #b0c9d4; /* Light blue for Contact section */
+    text-color: #344c5e
 }
 
-/* Optional: Additional Styling for Cards */
+/* Styling for Project Cards */
 .card {
     margin-bottom: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for card depth */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #1f2224;
+    color: #6a6d6e;
+    text-align: center;
+    padding: 20px 0;
 }
