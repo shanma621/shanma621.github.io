@@ -8,7 +8,7 @@
 
 /* Hero Banner for Main Landing Page */
 .hero {
-    background-image: url('analyst_image.png'); /* Replace with actual image path */
+    background-image: url('analyst_image.png');
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -24,9 +24,9 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
-/* Hero Banner for About Me Page */
+/* Hero Banner for Sub Page */
 .subpage-hero {
-    background-image: url('smaller_graph_banner.png'); /* Replace with actual image path */
+    background-image: url('smaller_graph_banner.png');
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -44,29 +44,29 @@
 
 /* Content Sections for Landing Page */
 .content-section {
-    width: 75%; /* Background color spans 75% of the width */
+    width: 75%;
     padding: 60px 15px;
     background-color: #f0f0f0;
     box-sizing: border-box;
     position: relative;
     z-index: 1;
-    margin: 30px auto; /* Centers section and adds spacing */
+    margin: 30px auto;
 }
 
-/* First section offset for Landing Page */
+/* First section offset for Landing Page to start under Hero Banner*/
 .first-section {
     margin-top: 100vh;
 }
 
 /* Full-width Content Section for About Me Page */
 .full-width-section {
-    width: 100%; /* Full width background for About Me */
+    width: 100%;
     padding: 60px 15px;
-    background-color: #b0c9d4; /* Custom color for About Me page */
+    background-color: #b0c9d4;
     box-sizing: border-box;
     position: relative;
     z-index: 1;
-    margin-top: 50vh; /* Offset for the smaller banner */
+    margin-top: 50vh; /* Offset for the smaller banner size*/
 }
 
 /* Container for content within each section */
@@ -78,17 +78,17 @@
 
 /* Specific background colors for sections */
 #about {
-    background-color: #b0c9d4; /* Light blue for About section */
+    background-color: #b0c9d4;
     text-color: #344c5e
 }
 
 #projects {
-    background-color: #344c5e; /* Darker blue for Projects section */
+    background-color: #344c5e;
     text-color: #b0c9d4
 }
 
 #contact {
-    background-color: #b0c9d4; /* Light blue for Contact section */
+    background-color: #b0c9d4;
     text-color: #344c5e
 }
 
