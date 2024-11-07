@@ -82,6 +82,11 @@
     text-color: #344c5e
 }
 
+#skills {
+    background-color: #b0c9d4;
+    text-color: #344c5e
+}
+
 #projects {
     background-color: #344c5e;
     text-color: #b0c9d4
@@ -90,6 +95,14 @@
 #contact {
     background-color: #b0c9d4;
     text-color: #344c5e
+}
+
+ul{
+    list-style-type: disc;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    columns: 2;
+    list-style-position: inside;//this is important addition
 }
 
 /* Styling for Project Cards */
