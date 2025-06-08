@@ -71,45 +71,61 @@
 
 /* Container for content within each section */
 .content-container {
-    max-width: 75%; /* Content limited to 75% width */
+    max-width: 75%;
     margin: 0 auto;
     padding: 20px;
 }
 
-/* Specific background colors for sections */
+/* Specific background + text colors for sections */
 #about {
     background-color: #b0c9d4;
-    text-color: #344c5e
+    color: #344c5e;
 }
 
 #skills {
     background-color: #b0c9d4;
-    text-color: #344c5e
+    color: #344c5e;
 }
 
 #projects {
     background-color: #344c5e;
-    text-color: #b0c9d4
+    color: #b0c9d4;
 }
 
 #contact {
     background-color: #b0c9d4;
-    text-color: #344c5e
+    color: #344c5e;
 }
 
-ul{
+/* Two-column list layout */
+ul {
     list-style-type: disc;
     -webkit-columns: 2;
     -moz-columns: 2;
     columns: 2;
-    list-style-position: inside;//this is important addition
+    list-style-position: inside;
 }
 
-/* Styling for Project Cards */
+/* Project Cards */
 .card {
     margin-bottom: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: #fff;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Card Hover Animation */
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Ensure consistent card height */
+.card .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 
 /* Footer Styling */
