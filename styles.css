@@ -24,19 +24,6 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
-/* Optional scroll cue inside hero */
-.scroll-down-cue {
-    position: absolute;
-    bottom: 30px;
-    font-size: 2rem;
-    animation: bounce 1.5s infinite;
-    color: #ffffff;
-}
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(10px); }
-}
-
 /* Hero Banner for Sub Page */
 .subpage-hero {
     background-image: url('smaller_graph_banner.png');
@@ -55,7 +42,7 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
-/* Content Sections for Landing Page */
+/* Content Sections */
 .content-section {
     width: 75%;
     padding: 60px 15px;
@@ -66,10 +53,9 @@
     margin: 30px auto;
 }
 
-/* First section offset to appear below hero */
+/* First section offset to appear after fixed hero banner */
 .first-section {
-    margin-top: 0;
-    padding-top: 100vh;
+    margin-top: 100vh;
 }
 
 /* Full-width Content Section for About Me Page */
@@ -80,35 +66,33 @@
     box-sizing: border-box;
     position: relative;
     z-index: 1;
-    margin-top: 50vh; /* Offset for the smaller banner size */
+    margin-top: 50vh;
 }
 
-/* Container for content within each section */
+/* Content container */
 .content-container {
     max-width: 75%;
     margin: 0 auto;
     padding: 20px;
 }
 
-/* Specific background colors for sections */
+/* Section background colors */
 #about {
     background-color: #b0c9d4;
-    color: #344c5e;
-}
-#skills {
-    background-color: #b0c9d4;
-    color: #344c5e;
-}
-#projects {
-    background-color: #344c5e;
-    color: #b0c9d4;
-}
-#contact {
-    background-color: #b0c9d4;
-    color: #344c5e;
 }
 
-/* Skill list formatting */
+#skills {
+    background-color: #b0c9d4;
+}
+
+#projects {
+    background-color: #344c5e;
+}
+
+#contact {
+    background-color: #b0c9d4;
+}
+
 ul {
     list-style-type: disc;
     -webkit-columns: 2;
@@ -117,37 +101,55 @@ ul {
     list-style-position: inside;
 }
 
-/* Styling for Project Cards */
+/* Project Cards */
 .card {
     margin-bottom: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: #fff;
 }
 
-/* Responsive Project Cards */
+/* Project Cards Grid */
 #projects .row {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 #projects .col-md-4 {
     flex: 1 1 calc(33.333% - 1rem);
-    min-width: 250px;
-    max-width: 100%;
+    display: flex;
 }
 
-@media (max-width: 768px) {
+/* Card Fill for alignment */
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
     #projects .col-md-4 {
-        flex: 1 1 100%;
+        flex: 1 1 calc(50% - 1rem);
     }
 }
 
-/* Footer Styling */
+@media (max-width: 575px) {
+    #projects .col-md-4 {
+        flex: 1 1 100%;
+    }
+
+    ul {
+        columns: 1;
+    }
+}
+
+/* Footer */
 footer {
     background-color: #1f2224;
     color: #6a6d6e;
     text-align: center;
     padding: 20px 0;
 }
+
