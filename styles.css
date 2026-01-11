@@ -1,9 +1,18 @@
+/* -----------------------------
+   GLOBAL
+------------------------------ */
+:root {
+  --nav-h: 72px; /* adjust if your navbar is taller/shorter */
+}
+
 /* NAV */
 .navbar {
   z-index: 1000;
 }
 
-/* HERO */
+/* -----------------------------
+   HERO
+------------------------------ */
 .hero {
   background-image: url('analyst_Banner.png');
   background-size: cover;
@@ -12,6 +21,7 @@
   position: fixed;
   inset: 0;
   z-index: -2;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,11 +36,20 @@
   z-index: -1;
 }
 
+/* This centers the hero content correctly while accounting for the navbar */
 .hero-content {
-  padding-top: 80px;
-  display: flex;
-  justify-content: center;
   width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* create space for navbar, then pull content up a touch */
+  padding-top: var(--nav-h);
+  padding-left: 16px;
+  padding-right: 16px;
+  box-sizing: border-box;
 }
 
 /* Circle-safe content box */
@@ -39,6 +58,9 @@
   padding: clamp(16px, 3vmin, 28px);
   text-align: center;
   color: #fff;
+
+  /* THE FIX: nudge up so content visually sits inside the inner circle */
+  transform: translateY(clamp(-28px, -2.8vmin, -12px));
 }
 
 /* HERO TEXT */
@@ -50,7 +72,7 @@
 }
 
 .hero-title {
-  font-size: clamp(1.8rem, 4.2vmin, 3rem);
+  font-size: clamp(1.75rem, 4.2vmin, 3rem);
   font-weight: 700;
   line-height: 1.1;
   margin-bottom: 12px;
@@ -78,7 +100,9 @@
   font-size: 0.95rem;
 }
 
-/* SECTIONS */
+/* -----------------------------
+   SECTIONS
+------------------------------ */
 .content-section {
   width: min(1100px, 90%);
   padding: 70px 18px;
@@ -86,6 +110,7 @@
   border-radius: 16px;
   position: relative;
   z-index: 1;
+  box-sizing: border-box;
 }
 
 .first-section {
@@ -143,4 +168,23 @@
 footer {
   background-color: #1f2224;
   color: #6a6d6e;
+}
+
+/* -----------------------------
+   RESPONSIVE TWEAKS
+------------------------------ */
+@media (max-width: 576px) {
+  :root {
+    --nav-h: 64px; /* navbar usually compresses a bit on phones */
+  }
+
+  .hero-circle {
+    width: min(78vmin, 520px);
+    transform: translateY(clamp(-20px, -2.4vmin, -10px));
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    max-width: 260px;
+  }
 }
