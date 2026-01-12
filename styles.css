@@ -60,7 +60,7 @@
   color: #fff;
 
   /* THE FIX: nudge up so content visually sits inside the inner circle */
-  transform: translateY(clamp(-40px, -2.8vmin, -12px));
+  transform: translateY(clamp(-50px, -2.8vmin, -12px));
 }
 
 /* HERO TEXT */
