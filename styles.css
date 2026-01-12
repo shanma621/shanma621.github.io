@@ -2,7 +2,7 @@
    GLOBAL
 ------------------------------ */
 :root {
-  --nav-h: 72px; /* adjust if your navbar is taller/shorter */
+  --nav-h: 72px;
 }
 
 /* NAV */
@@ -36,7 +36,6 @@
   z-index: -1;
 }
 
-/* Centers hero content while accounting for navbar height */
 .hero-content {
   width: 100%;
   min-height: 100vh;
@@ -51,18 +50,29 @@
   box-sizing: border-box;
 }
 
-/* Circle-safe content box */
+/* -----------------------------
+   HERO CIRCLE (IMAGE STAYS SAME)
+------------------------------ */
 .hero-circle {
   width: min(62vmin, 640px);
-  padding: clamp(16px, 3vmin, 28px);
   text-align: center;
   color: #fff;
+
+  /* IMPORTANT: do NOT move the circle */
 }
 
-/* ✅ ACTUAL FIX: move text INSIDE the circle, not the circle */
-.hero-circle > * {
+/* -----------------------------
+   HERO TEXT BLOCK (THIS IS THE FIX)
+------------------------------ */
+.hero-kicker,
+.hero-title,
+.hero-subtitle,
+.hero-buttons {
+  max-width: 42ch;          /* makes text fit INSIDE circle */
+  margin-left: auto;
+  margin-right: auto;
   position: relative;
-  top: -28px; /* ← adjust this if needed */
+  top: -36px;               /* nudges text upward */
 }
 
 /* HERO TEXT */
@@ -83,8 +93,7 @@
 .hero-subtitle {
   font-size: clamp(0.95rem, 1.8vmin, 1.15rem);
   line-height: 1.55;
-  max-width: 52ch;
-  margin: 0 auto 20px;
+  margin-bottom: 20px;
   opacity: 0.95;
 }
 
@@ -125,9 +134,7 @@
 }
 
 /* COLORS */
-#about,
-#skills,
-#contact {
+#about, #skills, #contact {
   background-color: #b0c9d4;
   color: #344c5e;
 }
@@ -175,7 +182,7 @@ footer {
 }
 
 /* -----------------------------
-   RESPONSIVE TWEAKS
+   RESPONSIVE
 ------------------------------ */
 @media (max-width: 576px) {
   :root {
@@ -186,8 +193,12 @@ footer {
     width: min(78vmin, 520px);
   }
 
-  .hero-circle > * {
-    top: -18px; /* slightly less lift on small screens */
+  .hero-kicker,
+  .hero-title,
+  .hero-subtitle,
+  .hero-buttons {
+    max-width: 34ch;
+    top: -22px;
   }
 
   .hero-buttons .btn {
@@ -195,4 +206,3 @@ footer {
     max-width: 260px;
   }
 }
-
