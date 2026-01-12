@@ -36,7 +36,7 @@
   z-index: -1;
 }
 
-/* This centers the hero content correctly while accounting for the navbar */
+/* Centers hero content while accounting for navbar height */
 .hero-content {
   width: 100%;
   min-height: 100vh;
@@ -45,7 +45,6 @@
   align-items: center;
   justify-content: center;
 
-  /* create space for navbar, then pull content up a touch */
   padding-top: var(--nav-h);
   padding-left: 16px;
   padding-right: 16px;
@@ -58,9 +57,12 @@
   padding: clamp(16px, 3vmin, 28px);
   text-align: center;
   color: #fff;
+}
 
-  /* THE FIX: nudge up so content visually sits inside the inner circle */
-  transform: translateY(clamp(-50px, -2.8vmin, -12px));
+/* ✅ ACTUAL FIX: move text INSIDE the circle, not the circle */
+.hero-circle > * {
+  position: relative;
+  top: -28px; /* ← adjust this if needed */
 }
 
 /* HERO TEXT */
@@ -123,7 +125,9 @@
 }
 
 /* COLORS */
-#about, #skills, #contact {
+#about,
+#skills,
+#contact {
   background-color: #b0c9d4;
   color: #344c5e;
 }
@@ -175,12 +179,15 @@ footer {
 ------------------------------ */
 @media (max-width: 576px) {
   :root {
-    --nav-h: 64px; /* navbar usually compresses a bit on phones */
+    --nav-h: 64px;
   }
 
   .hero-circle {
     width: min(78vmin, 520px);
-    transform: translateY(clamp(-20px, -2.4vmin, -10px));
+  }
+
+  .hero-circle > * {
+    top: -18px; /* slightly less lift on small screens */
   }
 
   .hero-buttons .btn {
@@ -188,3 +195,4 @@ footer {
     max-width: 260px;
   }
 }
+
