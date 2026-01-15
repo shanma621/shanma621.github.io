@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Post-COVID Rent Trends Analysis | Shanna Siebert</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- IMPORTANT: we are inside /projects, so styles is one level up -->
+  <link rel="stylesheet" href="../styles.css?v=5" />
+</head>
+
+<body class="project-page">
+
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="../index.html">Shanna Siebert</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="../index.html#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#overview">Overview</a></li>
+          <li class="nav-item"><a class="nav-link" href="#approach">Approach</a></li>
+          <li class="nav-item"><a class="nav-link" href="#results">Results</a></li>
+          <li class="nav-item"><a class="nav-link" href="#links">Links</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO (same background/banner, same “floating panels” feel) -->
+  <header class="hero">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <div class="hero-circle">
+        <p class="hero-kicker">PYTHON • PANDAS • WRANGLING • VISUALIZATION</p>
+
+        <h1 class="hero-title">
+          Post-COVID Rent Trends Analysis
+        </h1>
+
+        <p class="hero-subtitle">
+          County-level rent trends before vs. after COVID, using Zillow rent data combined with Census income data
+          to explore affordability through time-series alignment and ratio analysis.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#overview" class="btn btn-primary">Read the Summary</a>
+          <a href="https://shanma621.github.io/post_covid_rent_analysis/" target="_blank" rel="noopener"
+             class="btn btn-primary">
+            View Live Report
+          </a>
+          <a href="https://github.com/shanma621/post_covid_rent_analysis" target="_blank" rel="noopener"
+             class="btn btn-primary">
+            View Code
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator" aria-hidden="true">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+        <path d="M6 9l6 6 6-6"
+              stroke="rgba(255,255,255,0.75)"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </header>
+
+  <!-- OVERVIEW -->
+<section id="overview" class="content-section first-section">
+
+
+  <div class="content-container">
+    <h2>Overview</h2>
+
+    <p class="lead">
+      This project analyzes U.S. county-level rent trends before and after COVID-19 by combining Zillow rental time
+      series data with Census income data, then measuring affordability using trend and ratio-based comparisons.
+    </p>
+
+    <div class="row g-4 mt-2">
+      <!-- What I Did -->
+      <div class="col-md-6">
+        <div class="skill-box">
+          <h3>What I Did</h3>
+          <ul class="mb-0">
+            <li>Cleaned and validated multi-source datasets with inconsistent formats and time coverage</li>
+            <li>Aligned county-level time series so pre/post comparisons are actually meaningful</li>
+            <li>Computed rent-to-income measures and summarized changes across time</li>
+            <li>Built clear visuals to show trend shifts and affordability changes</li>
+            <li>Documented steps for reproducibility (so it’s not “trust me bro” analytics)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Tools & Skills -->
+      <div class="col-md-6">
+        <div class="skill-box">
+          <h3>Tools & Skills</h3>
+          <ul class="mb-0">
+            <li>Python: pandas, NumPy</li>
+            <li>Data wrangling: joins, reshaping, filtering, handling missing values</li>
+            <li>Exploratory analysis + visual storytelling</li>
+            <li>Reproducible notebook workflow</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <p class="mt-4 mb-0 small text-muted">
+      Note: the detailed methodology and full outputs are available in the Live Report link (GitHub Pages).
+    </p>
+  </div>
+</section>
+
+
+  <!-- APPROACH -->
+<section id="approach" class="content-section">
+
+
+  <div class="content-container">
+    <h2>Approach</h2>
+
+    <div class="row g-4">
+      <!-- Data Wrangling Pipeline -->
+      <div class="col-lg-7">
+        <div class="skill-box">
+          <h3>Data Wrangling Pipeline</h3>
+          <ul class="mb-0">
+            <li>Loaded and standardized column formats across datasets</li>
+            <li>Validated county identifiers and joined datasets safely (no silent row loss)</li>
+            <li>Aligned time series to comparable periods for pre/post analysis</li>
+            <li>Calculated affordability metrics (rent-to-income style ratios)</li>
+            <li>Generated summary tables and visuals used in the report</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Why This Matters -->
+      <div class="col-lg-5">
+        <div class="skill-box">
+          <h3>Why This Matters</h3>
+          <p class="mb-0">
+            Housing affordability is a practical policy + personal-finance problem. Comparing rent in isolation can
+            mislead; adding income context helps show whether rent increases are outpacing what people can realistically
+            afford.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-4">
+      <img
+        src="../images/average county level rent.png"
+        class="img-fluid rounded shadow"
+        alt="Average county-level rent chart preview">
+    </div>
+  </div>
+</section>
+
+  <!-- RESULTS -->
+<section id="results" class="content-section">
+
+
+  <div class="content-container">
+    <h2>Results & Takeaways</h2>
+
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="skill-box">
+          <h3>What the Analysis Shows</h3>
+          <ul class="mb-0">
+            <li>Clear shifts in rent trends after the COVID period (direction and strength vary by location)</li>
+            <li>Affordability is better captured when rent is compared against income context</li>
+            <li>County-level patterns are not uniform—aggregates can hide big differences</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="skill-box">
+          <h3>What I’d Do Next (if this were work)</h3>
+          <ul class="mb-0">
+            <li>Add regional grouping (state/metro) to show patterns without losing county detail</li>
+            <li>Track inflation-adjusted measures to avoid “nominal dollars lie” problems</li>
+            <li>Build a small dashboard view for filtering counties and comparing timelines</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </section>
+
+
+  <!-- LINKS -->
+  <section id="links" class="content-section">
+
+
+    <div class="content-container">
+      <h2>Links</h2>
+
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="skill-box">
+            <h3>Live Report</h3>
+            <p class="mb-2">
+              Read the full notebook-style report with all visuals and outputs.
+            </p>
+            <a class="btn btn-primary"
+               href="https://shanma621.github.io/post_covid_rent_analysis/"
+               target="_blank"
+               rel="noopener">
+              Open Live Report
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="skill-box">
+            <h3>GitHub Repo</h3>
+            <p class="mb-2">
+              View the code, data pipeline steps, and project structure.
+            </p>
+            <a class="btn btn-primary"
+               href="https://github.com/shanma621/post_covid_rent_analysis"
+               target="_blank"
+               rel="noopener">
+              Open GitHub Repo
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <a href="../index.html#projects" class="btn btn-outline-light">
+          ← Back to Projects
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-3 text-center bg-dark text-white">
+    <p class="mb-0">&copy; 2026 Shanna Siebert</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
