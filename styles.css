@@ -1,100 +1,100 @@
-/* -----------------------------
+/* =============================
    GLOBAL
------------------------------- */
+============================= */
 :root {
   --nav-h: 72px;
+
+  /* palette */
+  --ink: #344c5e;
+  --paper: #b0c9d4;
+  --slate: #0f1e2d;
+  --slate-2: #344c5e;
+  --white: #f2f7fa;
 }
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background: var(--slate);
+}
+
+/* Fixed nav: make anchor jumps land nicely */
+section { scroll-margin-top: calc(var(--nav-h) + 16px); }
 
 /* NAV */
-.navbar {
-  z-index: 1000;
-}
+.navbar { z-index: 1000; }
 
-/* -----------------------------
+/* =============================
    HERO
------------------------------- */
+============================= */
 .hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   background-image: url('images/data_banner.png');
- .hero {
-  background-size: contain;
+  background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
 }
 
-
-
-
-  height: 100vh;
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* subtle parallax feel on desktops (mobile browsers hate fixed backgrounds) */
+@media (min-width: 992px) {
+  .hero { background-attachment: fixed; }
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.10); /* subtle veil so background isn’t blown out */
-  z-index: -1;
+  background: rgba(0, 0, 0, 0.10);
+  z-index: 0;
 }
 
 .hero-content {
+  position: relative;
+  z-index: 1;
   width: 100%;
-  min-height: 100vh;
+  padding-top: var(--nav-h);
+  padding-left: 16px;
+  padding-right: 16px;
 
   display: flex;
   align-items: center;
   justify-content: center;
-
-  padding-top: var(--nav-h);
-  padding-left: 16px;
-  padding-right: 16px;
-  box-sizing: border-box;
 }
 
-/* HERO TEXT PANEL (project + homepage) */
+/* HERO TEXT PANEL (homepage + project pages) */
 .hero-circle {
   width: min(900px, 92%);
   padding: 28px 26px;
   border-radius: 18px;
 
-  /* frosted glass */
-  background: rgba(15, 30, 45, 0.45);
+  background: rgba(15, 30, 45, 0.55);
   border: 1px solid rgba(255, 255, 255, 0.18);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 
-  /* subtle depth */
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
-
   text-align: center;
 }
 
-
-/* -----------------------------
-   HERO TEXT BLOCK (KEEP POSITION)
------------------------------- */
-.hero-kicker,
-.hero-title,
-.hero-subtitle {
-  text-shadow: 0 2px 14px rgba(0,0,0,0.35);
-},
-.hero-buttons {
-  max-width: 46ch;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
 /* HERO TEXT */
+.hero-circle,
+.hero-circle h1,
+.hero-circle h2,
+.hero-circle p { color: var(--white); }
+
 .hero-kicker {
   font-size: clamp(0.8rem, 1.5vmin, 0.95rem);
-  letter-spacing: 0.15em;
-  opacity: 0.9;
+  letter-spacing: 0.18em;
+  opacity: 0.88;
   margin-bottom: 10px;
+  text-shadow: 0 2px 14px rgba(0,0,0,0.35);
 }
 
 .hero-title {
@@ -102,6 +102,7 @@
   font-weight: 700;
   line-height: 1.1;
   margin-bottom: 12px;
+  text-shadow: 0 2px 14px rgba(0,0,0,0.35);
 }
 
 .hero-subtitle {
@@ -109,6 +110,7 @@
   line-height: 1.55;
   margin-bottom: 20px;
   opacity: 0.95;
+  text-shadow: 0 2px 14px rgba(0,0,0,0.35);
 }
 
 /* HERO BUTTONS */
@@ -117,6 +119,9 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
+  max-width: 46ch;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-buttons .btn {
@@ -125,34 +130,7 @@
   font-size: 0.95rem;
 }
 
-
-
-/* HERO TEXT — force light text on dark panel */
-.hero-circle,
-.hero-circle h1,
-.hero-circle h2,
-.hero-circle p {
-  color: #f2f7fa;
-}
-
-/* Kicker slightly muted but still readable */
-.hero-kicker {
-  color: rgba(242, 247, 250, 0.85);
-  letter-spacing: 0.18em;
-}
-
-/* Subtitle softer than title */
-.hero-subtitle {
-  color: rgba(242, 247, 250, 0.9);
-}
-
-/* Buttons stay readable */
-.hero-circle .btn {
-  color: #ffffff;
-}
-
-
-/* ✅ Scroll hint (fixed to viewport, never affects layout) */
+/* Scroll hint (fixed to viewport, never affects layout) */
 .scroll-indicator {
   position: fixed;
   bottom: 18px;
@@ -168,9 +146,9 @@
   filter: drop-shadow(0 2px 10px rgba(0,0,0,0.35));
 }
 
-/* -----------------------------
-   SECTIONS (center panels, background visible on sides)
------------------------------- */
+/* =============================
+   SECTIONS
+============================= */
 .content-section {
   width: min(1100px, 90%);
   padding: 70px 18px;
@@ -178,68 +156,39 @@
   border-radius: 16px;
   position: relative;
   z-index: 1;
-  box-sizing: border-box;
 }
 
-.first-section {
-  margin-top: 100vh; /* sections start after hero viewport */
-}
+.first-section { margin-top: 30px; }
 
 .content-container {
   max-width: 1000px;
   margin: 0 auto;
 }
 
-/* COLORS */
+/* Light sections */
 #about, #skills, #contact {
-  background-color: #b0c9d4;
-  color: #344c5e;
+  background-color: var(--paper);
+  color: var(--ink);
 }
 
-
-/* -----------------------------
-   PROJECT DETAIL PAGES
-   (use <body class="project-page">)
------------------------------- */
-.project-page .content-section {
-  background-color: #344c5e;
-  color: #b0c9d4;
-}
-
-/* readable headers */
-.project-page .content-section h2,
-.project-page .content-section h3 {
-  color: #f2f7fa;
+#about h2,
+#skills h2,
+#contact h2,
+#skills h3 {
+  color: #243746;
   font-weight: 700;
   letter-spacing: 0.5px;
-  margin-bottom: 0.75rem;
 }
 
-/* less transparent boxes */
-.project-page .skill-box {
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 16px;
-  padding: 1.25rem;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+/* Projects section (dark) */
+#projects {
+  background-color: var(--slate-2);
+  color: var(--paper);
 }
 
-.project-page .skill-box p,
-.project-page .skill-box li {
-  color: #e8f0f5;
-  line-height: 1.5;
-}
-
-/* bootstrap text-muted is too dark on this page */
-.project-page .text-muted {
-  color: rgba(232, 240, 245, 0.75) !important;
-}
-
-/* HEADERS: readable on dark backgrounds */
 #projects h2,
 #projects h3 {
-  color: #f2f7fa;         /* brighter than body text */
+  color: var(--white);
   font-weight: 700;
   letter-spacing: 0.5px;
   margin-bottom: 0.75rem;
@@ -253,35 +202,28 @@
   font-size: clamp(1.25rem, 1.6vw, 1.6rem);
 }
 
-#projects {
-  background-color: #344c5e;
-  color: #b0c9d4;
+/* SKILL BOXES */
+.skill-box {
+  background: rgba(255, 255, 255, 0.55);
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
 
-
-/* SKILL BOXES: less transparent + better contrast */
+/* darker section panels */
 #projects .skill-box {
-  background: rgba(255, 255, 255, 0.12);  /* increase opacity */
+  background: rgba(255, 255, 255, 0.12);
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 16px;
-  padding: 1.25rem 1.25rem;
+  padding: 1.25rem;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
 
 #projects .skill-box p,
 #projects .skill-box li {
-  color: #e8f0f5; /* readable text inside panels */
+  color: #e8f0f5;
   line-height: 1.5;
-}
-
-
-/* SKILLS */
-.skill-box {
-  background: rgba(255,255,255,0.55);
-  padding: 18px;
-  border-radius: 14px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
 }
 
 .skill-note {
@@ -304,33 +246,60 @@
 
 .card-footer {
   font-size: 0.85rem;
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 /* FOOTER */
 footer {
   background-color: #1f2224;
-  color: #6a6d6e;
+  color: rgba(255,255,255,0.75);
 }
 
-/* -----------------------------
+/* =============================
+   PROJECT DETAIL PAGES
+   (use <body class="project-page">)
+============================= */
+.project-page .content-section {
+  background-color: var(--slate-2);
+  color: var(--paper);
+}
+
+.project-page .content-section h2,
+.project-page .content-section h3 {
+  color: var(--white);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.75rem;
+}
+
+.project-page .skill-box {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 16px;
+  padding: 1.25rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.project-page .skill-box p,
+.project-page .skill-box li {
+  color: #e8f0f5;
+  line-height: 1.5;
+}
+
+.project-page .text-muted {
+  color: rgba(232, 240, 245, 0.75) !important;
+}
+
+/* =============================
    RESPONSIVE
------------------------------- */
+============================= */
 @media (max-width: 576px) {
-  :root {
-    --nav-h: 64px;
-  }
+  :root { --nav-h: 64px; }
 
   .hero-circle {
-    width: min(78vmin, 520px);
-  }
-
-  .hero-kicker,
-  .hero-title,
-  .hero-subtitle,
-  .hero-buttons {
-    max-width: 34ch;
-    top: -28px;
+    width: min(520px, 94%);
+    padding: 22px 18px;
   }
 
   .scroll-indicator {
