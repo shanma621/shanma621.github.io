@@ -1,200 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rental Demand Analysis | Shanna Siebert</title>
-    <link rel="stylesheet" href="../styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rental Demand Analysis | Shanna Siebert</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css?v=5" />
 </head>
 
-<body>
+<body class="project-page">
 
-<header>
-    <nav>
-        <a href="../index.html">Home</a>
-        <a href="../projects.html">Projects</a>
-    </nav>
-</header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="../index.html">Shanna Siebert</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-<main class="project-page">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="../index.html#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#overview">Overview</a></li>
+          <li class="nav-item"><a class="nav-link" href="#approach">Approach</a></li>
+          <li class="nav-item"><a class="nav-link" href="#results">Results</a></li>
+          <li class="nav-item"><a class="nav-link" href="#links">Links</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-    <section class="project-hero">
-        <p class="project-category">
-            SQL • PostgreSQL • Reporting Automation
+  <header class="hero">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <div class="hero-circle">
+        <p class="hero-kicker">POSTGRESQL • SQL • PL/PGSQL • REPORTING AUTOMATION</p>
+
+        <h1 class="hero-title">
+          Rental Demand Analysis & Automated Genre Reporting
+        </h1>
+
+        <p class="hero-subtitle">
+          A PostgreSQL reporting workflow that analyzes movie rental demand by store location and genre using
+          relational joins, transformation functions, summary tables, triggers, and stored procedures.
         </p>
 
-        <h1>Rental Demand Analysis & Automated Genre Reporting</h1>
-
-        <p class="project-intro">
-            A PostgreSQL reporting workflow designed to analyze movie rental demand
-            by store location and genre using relational joins, transformation functions,
-            summary reporting tables, triggers, and stored procedures.
-        </p>
-
-        <div class="project-buttons">
-            <a href="https://github.com/shanma621/DVD_Rental_Demand_Analysis"
-               target="_blank"
-               class="button">
-               View GitHub Repository
-            </a>
+        <div class="hero-buttons">
+          <a href="#overview" class="btn btn-primary">Read the Summary</a>
+          <a href="https://github.com/shanma621/DVD_Rental_Demand_Analysis" target="_blank" rel="noopener"
+             class="btn btn-primary">
+            View Code
+          </a>
         </div>
-    </section>
+      </div>
+    </div>
 
-    <section>
-        <h2>Project Overview</h2>
+    <div class="scroll-indicator" aria-hidden="true">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+        <path d="M6 9l6 6 6-6"
+              stroke="rgba(255,255,255,0.75)"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </header>
 
-        <p>
-            This project was designed to simulate a lightweight business intelligence
-            reporting pipeline using PostgreSQL. The workflow identifies which movie
-            genres generate the highest rental demand at each store location in order
-            to support inventory planning and operational decision-making.
-        </p>
+  <section id="overview" class="content-section first-section">
+    <div class="content-container">
+      <h2>Overview</h2>
 
-        <p>
-            The project combines relational database design, SQL transformations,
-            aggregation reporting, trigger-based automation, and stored procedures
-            to create a reusable reporting workflow rather than a one-time query.
-        </p>
-    </section>
+      <p class="lead">
+        This project analyzes movie rental demand by store location and genre using PostgreSQL. The workflow
+        was designed to simulate a lightweight business intelligence reporting pipeline that supports recurring
+        operational reporting and inventory planning.
+      </p>
 
-    <section>
-        <h2>Business Question</h2>
+      <div class="row g-4 mt-2">
+        <div class="col-md-6">
+          <div class="skill-box">
+            <h3>What I Did</h3>
+            <ul class="mb-0">
+              <li>Joined rental, inventory, film, and category tables to create a detailed reporting dataset</li>
+              <li>Created PL/pgSQL functions to extract rental month and year from timestamp data</li>
+              <li>Built detail and summary reporting tables for genre demand analysis</li>
+              <li>Used a trigger to refresh summary metrics when new detail records are inserted</li>
+              <li>Created a stored procedure to rebuild the reporting workflow for recurring use</li>
+              <li>Documented the business purpose behind the technical design</li>
+            </ul>
+          </div>
+        </div>
 
-        <p>
-            Which movie genres generate the highest rental demand at each store location?
-        </p>
+        <div class="col-md-6">
+          <div class="skill-box">
+            <h3>Tools & Skills</h3>
+            <ul class="mb-0">
+              <li>PostgreSQL and SQL</li>
+              <li>PL/pgSQL functions, triggers, and stored procedures</li>
+              <li>Relational joins and aggregation</li>
+              <li>Detail and summary reporting table design</li>
+              <li>Operational reporting workflow development</li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-        <p>
-            Understanding genre demand by location can help businesses:
-        </p>
+      <p class="mt-4 mb-0 small text-muted">
+        Note: the full SQL script and project documentation are available in the GitHub repository.
+      </p>
+    </div>
+  </section>
 
-        <ul>
-            <li>Optimize inventory allocation</li>
-            <li>Improve purchasing decisions</li>
-            <li>Track changing customer preferences</li>
-            <li>Support operational reporting workflows</li>
-        </ul>
-    </section>
+  <section id="approach" class="content-section">
+    <div class="content-container">
+      <h2>Approach</h2>
 
-    <section>
-        <h2>Technical Workflow</h2>
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <div class="skill-box">
+            <h3>Reporting Pipeline</h3>
+            <ul class="mb-0">
+              <li>Extracted transaction-level rental records from the database</li>
+              <li>Joined rental activity to inventory, film, and genre/category data</li>
+              <li>Transformed rental timestamps into month and year fields for reporting</li>
+              <li>Created a detailed reporting table for drill-down analysis</li>
+              <li>Created a summary table showing rental counts by store and genre</li>
+              <li>Added automation logic so summary reporting can refresh without manual rebuilding</li>
+            </ul>
+          </div>
+        </div>
 
-        <h3>Data Sources</h3>
+        <div class="col-lg-5">
+          <div class="skill-box">
+            <h3>Why This Matters</h3>
+            <p class="mb-0">
+              Store-level demand patterns can vary by location. Tracking rental demand by genre and store can help
+              businesses stock inventory more strategically instead of guessing and hoping the spreadsheet goblins
+              are feeling generous.
+            </p>
+          </div>
+        </div>
+      </div>
 
-        <p>
-            The analysis combines data from multiple relational database tables:
-        </p>
-
-        <ul>
-            <li>Rental transactions</li>
-            <li>Inventory records</li>
-            <li>Film information</li>
-            <li>Genre/category mappings</li>
-            <li>Store location data</li>
-        </ul>
-
-        <h3>Data Transformation</h3>
-
-        <p>
-            Custom PL/pgSQL functions were created to transform rental timestamps
-            into separate month and year fields to improve reporting flexibility
-            and support future time-series analysis.
-        </p>
-
-        <h3>Reporting Tables</h3>
-
-        <p>
-            The workflow generates:
-        </p>
-
-        <ul>
-            <li>A detailed transaction-level reporting table</li>
-            <li>A summarized genre-by-store reporting table</li>
-        </ul>
-
-        <h3>Automation</h3>
-
-        <p>
-            Trigger logic was implemented to automatically refresh summary reporting
-            metrics whenever new detail records are inserted into the reporting table.
-        </p>
-
-        <p>
-            A stored procedure was also created to rebuild the reporting workflow
-            for recurring monthly reporting.
-        </p>
-    </section>
-
-    <section>
-        <h2>SQL Concepts Demonstrated</h2>
-
-        <ul>
-            <li>Relational database design</li>
-            <li>SQL joins</li>
-            <li>Aggregation and grouping</li>
-            <li>PL/pgSQL functions</li>
-            <li>Database triggers</li>
-            <li>Stored procedures</li>
-            <li>Operational reporting workflows</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Example Query</h2>
-
-<pre><code>
-SELECT
+      <div class="mt-4">
+        <div class="skill-box">
+          <h3>Example Query</h3>
+<pre><code>SELECT
     store_id,
     genre,
     COUNT(*) AS rental_count
 FROM rental_genre_detail
 GROUP BY store_id, genre
-ORDER BY store_id, rental_count DESC;
-</code></pre>
+ORDER BY store_id, rental_count DESC;</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    </section>
+  <section id="results" class="content-section">
+    <div class="content-container">
+      <h2>Results & Takeaways</h2>
 
-    <section>
-        <h2>Future Improvements</h2>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="skill-box">
+            <h3>What the Project Shows</h3>
+            <ul class="mb-0">
+              <li>Genre demand can be summarized by store location using relational database reporting</li>
+              <li>Detail and summary tables support both analysis and business-facing reporting</li>
+              <li>Triggers and stored procedures can reduce manual report maintenance</li>
+              <li>The same structure could be adapted for sales, inventory, customer, or operations reporting</li>
+            </ul>
+          </div>
+        </div>
 
-        <ul>
-            <li>Power BI or Tableau dashboard integration</li>
-            <li>Monthly trend analysis</li>
-            <li>Inventory forecasting</li>
-            <li>Seasonal demand analysis</li>
-            <li>Performance optimization with indexing</li>
-            <li>Automated scheduling with PGAgent</li>
-        </ul>
-    </section>
+        <div class="col-md-6">
+          <div class="skill-box">
+            <h3>What I’d Do Next</h3>
+            <ul class="mb-0">
+              <li>Add a Tableau or Power BI dashboard for interactive filtering</li>
+              <li>Include monthly trend visuals to show demand changes over time</li>
+              <li>Add indexes and performance testing for larger datasets</li>
+              <li>Extend the workflow to support inventory forecasting</li>
+              <li>Schedule recurring execution with PGAgent</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section>
-        <h2>Key Takeaway</h2>
+  <section id="links" class="content-section">
+    <div class="content-container">
+      <h2>Links</h2>
 
-        <p>
-            This project demonstrates how SQL can be used not only for querying
-            data, but also for building reusable reporting workflows that support
-            recurring business analysis and operational automation.
-        </p>
-    </section>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="skill-box">
+            <h3>GitHub Repo</h3>
+            <p class="mb-2">
+              View the SQL script, reporting workflow, and project documentation.
+            </p>
+            <a class="btn btn-primary"
+               href="https://github.com/shanma621/DVD_Rental_Demand_Analysis"
+               target="_blank"
+               rel="noopener">
+              Open GitHub Repo
+            </a>
+          </div>
+        </div>
 
-    <section>
-        <h2>Project Links</h2>
+        <div class="col-md-6">
+          <div class="skill-box">
+            <h3>Key Takeaway</h3>
+            <p class="mb-0">
+              This project demonstrates how SQL can be used not only for querying data, but also for building reusable
+              reporting workflows that support recurring business analysis and operational automation.
+            </p>
+          </div>
+        </div>
+      </div>
 
-        <ul>
-            <li>
-                <a href="https://github.com/shanma621/DVD_Rental_Demand_Analysis"
-                   target="_blank">
-                   GitHub Repository
-                </a>
-            </li>
-        </ul>
-    </section>
+      <div class="mt-4">
+        <a href="../index.html#projects" class="btn btn-outline-light">
+          ← Back to Projects
+        </a>
+      </div>
+    </div>
+  </section>
 
-</main>
+  <footer class="py-3 text-center bg-dark text-white">
+    <p class="mb-0">&copy; 2026 Shanna Siebert</p>
+  </footer>
 
-<footer>
-    <p>© 2026 Shanna Siebert</p>
-</footer>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
