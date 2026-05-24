@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rental Demand Analysis | Shanna Siebert</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="../projects.html">Projects</a>
+    </nav>
+</header>
+
+<main class="project-page">
+
+    <section class="project-hero">
+        <p class="project-category">
+            SQL • PostgreSQL • Reporting Automation
+        </p>
+
+        <h1>Rental Demand Analysis & Automated Genre Reporting</h1>
+
+        <p class="project-intro">
+            A PostgreSQL reporting workflow designed to analyze movie rental demand
+            by store location and genre using relational joins, transformation functions,
+            summary reporting tables, triggers, and stored procedures.
+        </p>
+
+        <div class="project-buttons">
+            <a href="https://github.com/shanma621/DVD_Rental_Demand_Analysis"
+               target="_blank"
+               class="button">
+               View GitHub Repository
+            </a>
+        </div>
+    </section>
+
+    <section>
+        <h2>Project Overview</h2>
+
+        <p>
+            This project was designed to simulate a lightweight business intelligence
+            reporting pipeline using PostgreSQL. The workflow identifies which movie
+            genres generate the highest rental demand at each store location in order
+            to support inventory planning and operational decision-making.
+        </p>
+
+        <p>
+            The project combines relational database design, SQL transformations,
+            aggregation reporting, trigger-based automation, and stored procedures
+            to create a reusable reporting workflow rather than a one-time query.
+        </p>
+    </section>
+
+    <section>
+        <h2>Business Question</h2>
+
+        <p>
+            Which movie genres generate the highest rental demand at each store location?
+        </p>
+
+        <p>
+            Understanding genre demand by location can help businesses:
+        </p>
+
+        <ul>
+            <li>Optimize inventory allocation</li>
+            <li>Improve purchasing decisions</li>
+            <li>Track changing customer preferences</li>
+            <li>Support operational reporting workflows</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Technical Workflow</h2>
+
+        <h3>Data Sources</h3>
+
+        <p>
+            The analysis combines data from multiple relational database tables:
+        </p>
+
+        <ul>
+            <li>Rental transactions</li>
+            <li>Inventory records</li>
+            <li>Film information</li>
+            <li>Genre/category mappings</li>
+            <li>Store location data</li>
+        </ul>
+
+        <h3>Data Transformation</h3>
+
+        <p>
+            Custom PL/pgSQL functions were created to transform rental timestamps
+            into separate month and year fields to improve reporting flexibility
+            and support future time-series analysis.
+        </p>
+
+        <h3>Reporting Tables</h3>
+
+        <p>
+            The workflow generates:
+        </p>
+
+        <ul>
+            <li>A detailed transaction-level reporting table</li>
+            <li>A summarized genre-by-store reporting table</li>
+        </ul>
+
+        <h3>Automation</h3>
+
+        <p>
+            Trigger logic was implemented to automatically refresh summary reporting
+            metrics whenever new detail records are inserted into the reporting table.
+        </p>
+
+        <p>
+            A stored procedure was also created to rebuild the reporting workflow
+            for recurring monthly reporting.
+        </p>
+    </section>
+
+    <section>
+        <h2>SQL Concepts Demonstrated</h2>
+
+        <ul>
+            <li>Relational database design</li>
+            <li>SQL joins</li>
+            <li>Aggregation and grouping</li>
+            <li>PL/pgSQL functions</li>
+            <li>Database triggers</li>
+            <li>Stored procedures</li>
+            <li>Operational reporting workflows</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Example Query</h2>
+
+<pre><code>
+SELECT
+    store_id,
+    genre,
+    COUNT(*) AS rental_count
+FROM rental_genre_detail
+GROUP BY store_id, genre
+ORDER BY store_id, rental_count DESC;
+</code></pre>
+
+    </section>
+
+    <section>
+        <h2>Future Improvements</h2>
+
+        <ul>
+            <li>Power BI or Tableau dashboard integration</li>
+            <li>Monthly trend analysis</li>
+            <li>Inventory forecasting</li>
+            <li>Seasonal demand analysis</li>
+            <li>Performance optimization with indexing</li>
+            <li>Automated scheduling with PGAgent</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Key Takeaway</h2>
+
+        <p>
+            This project demonstrates how SQL can be used not only for querying
+            data, but also for building reusable reporting workflows that support
+            recurring business analysis and operational automation.
+        </p>
+    </section>
+
+    <section>
+        <h2>Project Links</h2>
+
+        <ul>
+            <li>
+                <a href="https://github.com/shanma621/DVD_Rental_Demand_Analysis"
+                   target="_blank">
+                   GitHub Repository
+                </a>
+            </li>
+        </ul>
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 Shanna Siebert</p>
+</footer>
+
+</body>
+</html>
