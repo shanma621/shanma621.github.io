@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campaign Spending and Electoral Success | Shanna Wilson</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- This file belongs inside /projects, so the stylesheet is one level up. -->
+  <link rel="stylesheet" href="../styles.css?v=5" />
+</head>
+
+<body class="project-page">
+
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="../index.html">Shanna Wilson</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="../index.html#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#overview">Overview</a></li>
+          <li class="nav-item"><a class="nav-link" href="#preparation">Preparation</a></li>
+          <li class="nav-item"><a class="nav-link" href="#analysis">Analysis</a></li>
+          <li class="nav-item"><a class="nav-link" href="#results">Results</a></li>
+          <li class="nav-item"><a class="nav-link" href="#links">Links</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <div class="hero-circle">
+        <p class="hero-kicker">PYTHON • OPENFEC API • REGRESSION • TABLEAU</p>
+
+        <h1 class="hero-title">
+          Campaign Spending and Electoral Success
+        </h1>
+
+        <p class="hero-subtitle">
+          An analysis of U.S. House general elections from 2010 through 2024 examining how candidate and
+          independent spending relate to vote share, winning, and possible diminishing returns.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#overview" class="btn btn-primary">Read the Case Study</a>
+          <a href="https://public.tableau.com/app/profile/shanna.siebert/viz/campaignspending_17889927429860/CampaignSpendingandElectoralOutcomes?publish=yes"
+             target="_blank" rel="noopener" class="btn btn-primary">
+            View Dashboard
+          </a>
+          <a href="https://github.com/shanma621/Campaign-Spending-Project"
+             target="_blank" rel="noopener" class="btn btn-primary">
+            View Code
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator" aria-hidden="true">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+        <path d="M6 9l6 6 6-6"
+              stroke="rgba(255,255,255,0.75)"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round" />
+      </svg>
+    </div>
+  </header>
+
+  <!-- OVERVIEW -->
+  <section id="overview" class="content-section first-section">
+    <div class="content-container">
+      <h2>Overview</h2>
+
+      <p class="lead">
+        This project investigated the relationship between campaign spending and electoral success in U.S. House
+        general elections from 2010 through 2024, including whether additional spending became less effective at
+        higher levels.
+      </p>
+
+      <p>
+        I combined Federal Election Commission candidate-finance data, candidate-specific independent expenditures,
+        and MIT Election Data and Science Lab election results across eight election cycles. The analysis measured
+        statistical associations rather than claiming that spending caused electoral outcomes.
+      </p>
+
+      <div class="row g-4 mt-2">
+        <div class="col-md-6">
+          <div class="skill-box">
+            <h3>What I Did</h3>
+            <ul class="mb-0">
+              <li>Collected independent-expenditure records through the OpenFEC API</li>
+              <li>Integrated campaign-finance and election-result data from multiple sources</li>
+              <li>Standardized candidate names and validated candidate-election matches</li>
+              <li>Built and compared correlation, OLS, logistic, and quadratic models</li>
+              <li>Created analytical visuals and an interactive Tableau dashboard</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="skill-box">
+            <h3>Tools & Skills</h3>
+            <ul class="mb-0">
+              <li>Python 3.12, pandas, NumPy, Requests, SciPy, and statsmodels</li>
+              <li>Jupyter Notebooks and Visual Studio Code</li>
+              <li>API collection, pagination, retries, and error handling</li>
+              <li>Data integration, entity matching, and validation</li>
+              <li>Regression analysis, model comparison, and Tableau</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DATA PREPARATION -->
+  <section id="preparation" class="content-section">
+    <div class="content-container">
+      <h2>Data Preparation</h2>
+
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <div class="skill-box">
+            <h3>Building the Analytical Dataset</h3>
+            <ul class="mb-0">
+              <li>Filtered all sources to U.S. House general elections from 2010 through 2024</li>
+              <li>Preserved raw files separately from cleaned and processed data</li>
+              <li>Standardized names, election years, states, districts, and election types</li>
+              <li>Handled fusion-ticket, write-in, missing, and malformed records</li>
+              <li>Separated independent expenditures into candidate support and opposition totals</li>
+              <li>Aggregated each source to a consistent candidate-election level before joining</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="skill-box">
+            <h3>The Hard Part: Candidate Matching</h3>
+            <p>
+              The FEC and MIT datasets did not share a candidate identifier. I matched records using standardized
+              candidate names, election year, state, and district, then validated the results. Ambiguous and unmatched
+              records remained separate instead of being forced into the analytical dataset.
+            </p>
+            <p class="mb-0">
+              That choice reduced coverage slightly, but protected the analysis from incorrect spending assignments.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANALYSIS -->
+  <section id="analysis" class="content-section">
+    <div class="content-container">
+      <h2>Analysis</h2>
+
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="skill-box">
+            <h3>Analytical Process</h3>
+            <ul class="mb-0">
+              <li>Used descriptive statistics and visualizations to evaluate distributions and outliers</li>
+              <li>Applied log transformations because campaign spending was highly right-skewed</li>
+              <li>Measured relationships with Pearson correlation and OLS regression</li>
+              <li>Used logistic regression to examine the probability of winning</li>
+              <li>Calculated each candidate's share of total spending within the race</li>
+              <li>Tested diminishing returns with spending deciles, quadratic regression, and an F-test</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="skill-box">
+            <h3>Controlled Model</h3>
+            <p>
+              The final multivariable model evaluated candidate spending while accounting for independent expenditures,
+              incumbency, party, and election year. Residual plots and model comparisons were used to assess fit and
+              remaining error.
+            </p>
+            <p class="mb-0">
+              The models were used to describe broad relationships, not to make precise predictions or causal claims.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section id="results" class="content-section">
+    <div class="content-container">
+      <h2>Key Results</h2>
+
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="skill-box">
+            <h3>Spending and Vote Share</h3>
+            <ul class="mb-0">
+              <li>Log-transformed candidate spending had a strong positive correlation with vote share (r = .793)</li>
+              <li>The controlled model explained 72.8% of the variation in vote share</li>
+              <li>Candidate spending remained statistically significant after other electoral factors were included</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="skill-box">
+            <h3>Relative Spending</h3>
+            <ul class="mb-0">
+              <li>Candidate share of race spending had an even stronger correlation with vote share (r = .883)</li>
+              <li>Each 10-percentage-point increase in spending share was associated with about 2.78 times greater odds of winning</li>
+              <li>Relative financial position provided more context than total dollars alone</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="skill-box">
+            <h3>Independent Expenditures</h3>
+            <p class="mb-0">
+              Independent spending supporting a candidate was positively associated with vote share, while spending
+              opposing a candidate was negatively associated with vote share in the controlled model.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="skill-box">
+            <h3>Diminishing Returns</h3>
+            <p class="mb-0">
+              A simpler model initially suggested diminishing returns, but the quadratic term was no longer significant
+              after other electoral factors were included. The analysis did not identify one reliable spending level
+              where additional spending consistently became less effective.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIMITATIONS -->
+  <section id="limitations" class="content-section">
+    <div class="content-container">
+      <h2>Limitations</h2>
+
+      <div class="skill-box">
+        <ul class="mb-0">
+          <li>The analysis used observational data, so association should not be interpreted as causation</li>
+          <li>Some candidate records could not be matched reliably and were excluded from the primary dataset</li>
+          <li>Unmeasured candidate and race characteristics may also influence both spending and electoral performance</li>
+          <li>Complete race-level spending comparisons required sufficient coverage for all major candidates in a race</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- LINKS -->
+  <section id="links" class="content-section">
+    <div class="content-container">
+      <h2>Explore the Project</h2>
+
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="skill-box">
+            <h3>Interactive Dashboard</h3>
+            <p class="mb-2">
+              Explore spending, vote share, election-year trends, independent expenditures, and state-level patterns.
+            </p>
+            <a class="btn btn-primary"
+               href="https://public.tableau.com/app/profile/shanna.siebert/viz/campaignspending_17889927429860/CampaignSpendingandElectoralOutcomes?publish=yes"
+               target="_blank"
+               rel="noopener">
+              Open Tableau Dashboard
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="skill-box">
+            <h3>GitHub Repository</h3>
+            <p class="mb-2">
+              Review the notebooks, API collection script, project structure, documentation, and reproducible workflow.
+            </p>
+            <a class="btn btn-primary"
+               href="https://github.com/shanma621/Campaign-Spending-Project"
+               target="_blank"
+               rel="noopener">
+              Open GitHub Repo
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <a href="../index.html#projects" class="btn btn-outline-light">
+          &larr; Back to Projects
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-3 text-center bg-dark text-white">
+    <p class="mb-0">&copy; 2026 Shanna Wilson</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
